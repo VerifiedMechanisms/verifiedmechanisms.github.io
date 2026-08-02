@@ -705,7 +705,7 @@ footer {
   letter-spacing: -0.02em;
   margin: 0 0 1.25rem;
 }
-.page-lede { font-size: 1.08rem; line-height: 1.7; color: var(--text-dim); margin: 0; max-width: 60ch; }
+.page-lede { font-size: 1.08rem; line-height: 1.7; color: var(--text-dim); margin: 0; }
 
 .meta-row {
   display: flex;
@@ -743,8 +743,8 @@ footer {
   color: var(--eyebrow);
   margin: 2rem 0 0.85rem;
 }
-.page-body p { color: var(--text-dim); margin: 0 0 1.1rem; max-width: 68ch; }
-.page-body ul { margin: 0 0 1.1rem; padding: 0; list-style: none; max-width: 68ch; }
+.page-body p { color: var(--text-dim); margin: 0 0 1.1rem; }
+.page-body ul { margin: 0 0 1.1rem; padding: 0; list-style: none; }
 .page-body ul li {
   position: relative;
   padding: 0 0 0 1.5rem;
