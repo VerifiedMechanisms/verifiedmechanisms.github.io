@@ -96,17 +96,14 @@
         <p class="section-label reveal">Approach</p>
         <div class="approach-grid">
           <div class="reveal">
-            <svg class="glyph" viewBox="0 0 44 26" aria-hidden="true"><circle class="on" cx="6" cy="19" r="3.6"/><circle class="off" cx="22" cy="7" r="3.6"/><circle class="off" cx="38" cy="19" r="3.6"/></svg>
             <h3 class="approach-title">Autoresearch</h3>
             <p class="approach-desc">An autoresearch pipeline, consisting of multiple frontier models collaborating to generate theorems and formally verify them. Our implementation adapts and extends the harness proposed in Numina Lean Agent, tailoring it to the problem at hand.</p>
           </div>
           <div class="reveal" style="transition-delay:0.1s">
-            <svg class="glyph" viewBox="0 0 44 26" aria-hidden="true"><line x1="6" y1="19" x2="22" y2="7"/><circle class="on" cx="6" cy="19" r="3.6"/><circle class="on" cx="22" cy="7" r="3.6"/><circle class="off" cx="38" cy="19" r="3.6"/></svg>
             <h3 class="approach-title">Formal verification</h3>
             <p class="approach-desc">Unverified automation can fail quietly. Frontier models make mistakes, long derivations accumulate subtle errors, and human evaluation alone cannot reliably catch either. Requiring every proof to pass the Lean kernel removes this failure mode for mathematical claims.</p>
           </div>
           <div class="reveal" style="transition-delay:0.2s">
-            <svg class="glyph" viewBox="0 0 44 26" aria-hidden="true"><line x1="6" y1="19" x2="22" y2="7"/><line x1="22" y1="7" x2="38" y2="19"/><circle class="on" cx="6" cy="19" r="3.6"/><circle class="on" cx="22" cy="7" r="3.6"/><circle class="on" cx="38" cy="19" r="3.6"/></svg>
             <h3 class="approach-title">Empirical grounding</h3>
             <p class="approach-desc">The pilot question grew out of MATS work on understanding alignment pretraining, studying how features are represented after an attention update. This gives some evidence that the expressivity of multihead attention is relevant to empirical mechanistic interpretability, not just to formal expressivity theory.</p>
           </div>
@@ -122,10 +119,7 @@
       <h2 class="section-heading reveal">A compositional theory of what transformers can represent.</h2>
 
       <div class="strand reveal">
-        <div>
-          <svg class="glyph" viewBox="0 0 44 26" aria-hidden="true"><circle class="on" cx="7" cy="18" r="3.6"/><circle class="off" cx="29" cy="8" r="3.6"/></svg>
-          <h3 class="strand-title">Mechanistic interpretability</h3>
-        </div>
+        <h3 class="strand-title">Mechanistic interpretability</h3>
         <div class="strand-body">
           <p>Mechanistic interpretability is an important component of a broader toolkit for AI safety and oversight, but developing theory for it has been demanding, requiring sustained expert effort to work through the underlying mathematics.</p>
           <p>Our aim is a growing library of kernel-checked theorems that applied researchers can use as reference points, produced faster than hand-derivation alone. We start from attention heads and work towards composing component level theorems into the expressivity of multilayer transformers.</p>
@@ -137,10 +131,7 @@
       </div>
 
       <div class="strand reveal">
-        <div>
-          <svg class="glyph" viewBox="0 0 44 26" aria-hidden="true"><line x1="7" y1="18" x2="29" y2="8"/><circle class="on" cx="7" cy="18" r="3.6"/><circle class="on" cx="29" cy="8" r="3.6"/></svg>
-          <h3 class="strand-title">Autoresearch</h3>
-        </div>
+        <h3 class="strand-title">Autoresearch</h3>
         <div class="strand-body">
           <p>An open source multi agent orchestration harness: a system for coordinating frontier models for conjecture generation, proof search and Lean verification. Candidate results must survive mathematical critique and an adversarial counterexample hunt before any proof work begins.</p>
           <p>No single frontier model closes the loop alone on this problem, but the right combinations do. We are mapping which orchestration choices unlock mathematical progress, and publishing the harness and ablations, negative results included.</p>
@@ -164,7 +155,7 @@
           <a class="output" href="https://github.com/VerifiedMechanisms/xorformer" target="_blank" rel="noopener">
             <span class="output-kind">Repository</span>
             <span class="output-body">
-              <span class="output-title">Xorformer</span>
+              <span class="output-title">xorformer</span>
               <span class="output-desc">How many attention heads does it take to compute a Boolean function? Theorem ledger, writeups, Lean 4 formalization, and a Python package that estimates <span class="mono">H*(f)</span> empirically.</span>
             </span>
             <span class="output-arrow"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>

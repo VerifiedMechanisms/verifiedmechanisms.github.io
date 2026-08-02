@@ -175,7 +175,7 @@ nav.scrolled {
   gap: 0.8rem;
   color: var(--text);
   font-family: var(--font-display);
-  font-size: 1.32rem;
+  font-size: 1.2rem;
   font-weight: 400;
   letter-spacing: 0.01em;
   white-space: nowrap;
@@ -310,12 +310,12 @@ nav.scrolled {
 
 .hero-title {
   font-family: var(--font-display);
-  font-size: clamp(2.6rem, 6.4vw, 5.4rem);
+  font-size: clamp(2.1rem, 4.8vw, 4rem);
   font-weight: 300;
   line-height: 1.04;
   letter-spacing: -0.02em;
   margin: 0 0 2rem;
-  max-width: 17ch;
+  max-width: 19ch;
 }
 .hero-title em {
   font-style: italic;
@@ -408,7 +408,7 @@ nav.scrolled {
 
 .section-heading {
   font-family: var(--font-display);
-  font-size: clamp(1.9rem, 3.4vw, 2.9rem);
+  font-size: clamp(1.6rem, 2.7vw, 2.3rem);
   font-weight: 400;
   line-height: 1.14;
   letter-spacing: -0.015em;
@@ -428,7 +428,7 @@ nav.scrolled {
 }
 .about-statement {
   font-family: var(--font-display);
-  font-size: clamp(1.6rem, 2.9vw, 2.3rem);
+  font-size: clamp(1.35rem, 2.3vw, 1.85rem);
   font-weight: 400;
   line-height: 1.32;
   letter-spacing: -0.01em;
@@ -448,19 +448,12 @@ nav.scrolled {
 .approach-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; }
 .approach-title {
   font-family: var(--font-display);
-  font-size: 1.35rem;
+  font-size: 1.18rem;
   font-weight: 500;
   line-height: 1.25;
-  margin: 0.9rem 0 0.6rem;
+  margin: 0 0 0.6rem;
 }
 .approach-desc { font-size: 0.88rem; line-height: 1.75; color: var(--text-dim); margin: 0; }
-
-/* Node glyph: an ordinal drawn from the mark rather than a numeral.
-   Filled nodes count the position, hollow ones show what is still to come. */
-.glyph { display: block; width: 46px; height: 27px; color: var(--accent); overflow: visible; }
-.glyph .on { fill: currentColor; }
-.glyph .off { fill: none; stroke: currentColor; stroke-width: 1.3; opacity: 0.32; }
-.glyph line { stroke: currentColor; stroke-width: 1.5; opacity: 0.5; }
 
 /* ---------- research ---------- */
 
@@ -475,11 +468,11 @@ nav.scrolled {
 .strand:last-of-type { border-bottom: 1px solid var(--border); }
 .strand-title {
   font-family: var(--font-display);
-  font-size: clamp(1.5rem, 2.4vw, 2rem);
+  font-size: clamp(1.25rem, 1.9vw, 1.6rem);
   font-weight: 400;
   line-height: 1.2;
   letter-spacing: -0.01em;
-  margin: 1rem 0 0;
+  margin: 0;
 }
 .strand-body { margin: 0; }
 .strand-body p { margin: 0; color: var(--text-dim); font-size: 1rem; line-height: 1.8; }
@@ -526,7 +519,7 @@ nav.scrolled {
 .output-title {
   display: block;
   font-family: var(--font-display);
-  font-size: 1.28rem;
+  font-size: 1.12rem;
   font-weight: 500;
   line-height: 1.3;
   margin: 0 0 0.35rem;
@@ -561,7 +554,7 @@ nav.scrolled {
 }
 .team-name {
   font-family: var(--font-display);
-  font-size: 1.4rem;
+  font-size: 1.22rem;
   font-weight: 500;
   line-height: 1.25;
   margin: 0 0 0.3rem;
@@ -593,7 +586,7 @@ nav.scrolled {
 .careers-inner { max-width: 880px; margin: 0 auto; }
 .careers-heading {
   font-family: var(--font-display);
-  font-size: clamp(1.9rem, 3.6vw, 3rem);
+  font-size: clamp(1.6rem, 2.8vw, 2.4rem);
   font-weight: 400;
   line-height: 1.14;
   letter-spacing: -0.015em;
@@ -627,7 +620,7 @@ nav.scrolled {
 }
 .role-title {
   font-family: var(--font-display);
-  font-size: 1.6rem;
+  font-size: 1.35rem;
   font-weight: 500;
   line-height: 1.25;
   margin: 0 0 0.7rem;
@@ -707,7 +700,7 @@ footer {
 
 .page-title {
   font-family: var(--font-display);
-  font-size: clamp(2.2rem, 4.6vw, 3.4rem);
+  font-size: clamp(1.9rem, 3.6vw, 2.7rem);
   font-weight: 300;
   line-height: 1.08;
   letter-spacing: -0.02em;
@@ -736,7 +729,7 @@ footer {
 .page-body { padding: 1rem var(--gutter) 5rem; }
 .page-body h2 {
   font-family: var(--font-display);
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   font-weight: 500;
   line-height: 1.25;
   letter-spacing: -0.01em;
@@ -840,7 +833,7 @@ footer {
 }
 
 @media (max-width: 480px) {
-  .hero-title { font-size: 2.2rem; }
+  .hero-title { font-size: 1.85rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
