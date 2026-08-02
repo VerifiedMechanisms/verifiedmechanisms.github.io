@@ -44,7 +44,7 @@
         <li><a href="#impact">Impact</a></li>
         <li><a href="#research">Research</a></li>
         <li><a href="#team">Team</a></li>
-        <li><a href="#hiring">Hiring</a></li>
+        <li><a href="#hiring">Join us</a></li>
         <li><a class="is-cta" href="https://manifund.org/projects/formally-verified-autoresearch-for-theoretical-mech-interp" target="_blank" rel="noopener">Donate</a></li>
       </ul>
       <button class="theme-toggle" type="button" id="theme-toggle" aria-label="Switch colour theme" title="Switch colour theme">
@@ -106,7 +106,7 @@
           </div>
           <div class="reveal" style="transition-delay:0.2s">
             <h3 class="approach-title">Empirical grounding</h3>
-            <p class="approach-desc">The questions are chosen to stay grounded in empirical practice. Head complexity came out of work on how features are represented after an attention update, so the expressivity of multihead attention is relevant to empirical mechanistic interpretability, not just to formal expressivity theory.</p>
+            <p class="approach-desc">The research questions are selected to address concrete mathematical problems arising in empirical mechanistic interpretability. For instance, the pilot problem emerged from work investigating how features are represented after an attention update.</p>
           </div>
         </div>
       </div>
@@ -120,29 +120,13 @@
 
       <div class="about-grid">
         <div class="reveal">
-          <p class="about-statement">There is precedent for foundational theory shaping mechanistic interpretability.</p>
+          <p class="about-statement">A precedent for foundational theory shaping mechanistic interpretability</p>
           <div class="about-separator"></div>
         </div>
 
         <div class="about-body reveal" style="transition-delay:0.1s">
           <p>Theoretical work in mechanistic interpretability (<a class="ref" href="https://transformer-circuits.pub/2021/framework/index.html" target="_blank" rel="noopener">Elhage et al., 2021</a>; <a class="ref" href="https://transformer-circuits.pub/2022/toy_model/index.html" target="_blank" rel="noopener">Elhage et al., 2022</a>) has shaped empirical interpretability by providing useful abstractions, and principled starting points for experimentation. However, developing this kind of theory has been demanding, requiring sustained expert effort to work through the underlying mathematics. Yet recent advances in language models for mathematical reasoning and formal theorem proving may make it possible to produce rigorous results at a lower cost.</p>
-          <p>This project aims to produce foundational results for empirical interpretability by leveraging the growing mathematical abilities of frontier models, while identifying multi agent harnesses that make such theoretical research faster and more reliable.</p>
-          <p>&ldquo;A Mathematical Framework for Transformer Circuits&rdquo; (Elhage et al., 2021) worked out the mathematics of attention from first principles, and many later mechanistic interpretability ideas (for example, induction heads) build on that framework. Our aim is more modest than that of Elhage et al. but similar in spirit: a growing library of kernel-checked theorems that applied researchers can use as reference points, and a workflow for producing them faster than hand-derivation alone.</p>
-        </div>
-      </div>
-
-      <div class="about-approach">
-        <p class="section-label reveal">Why formally verified autoresearch for foundational theory?</p>
-        <div class="approach-grid approach-grid--two">
-          <div class="reveal">
-            <h3 class="approach-title">Need for autoresearch</h3>
-            <p class="approach-desc">Foundational theory is hard to scale with human effort alone. Hand-derivation is slow and expertise-intensive, frontier models can now carry much of this load, and the field is already beginning to automate alignment research itself.</p>
-          </div>
-          <div class="reveal" style="transition-delay:0.1s">
-            <h3 class="approach-title">Need for formal verification</h3>
-            <p class="approach-desc">Unverified automation can fail quietly. Frontier models make mistakes, long derivations accumulate subtle errors, and human evaluation alone cannot reliably catch either, so automated research tends to produce results that look compelling but are quietly wrong. Requiring every proof to pass the Lean kernel removes this failure mode for mathematical claims.</p>
-            <p class="approach-desc approach-desc--cont"><a class="ref" href="https://resolution.org/launch" target="_blank" rel="noopener">Resolution&rsquo;s launch note</a> makes a similar case: theory unlocks higher automation because proofs give automated research a source of ground truth that empirical metric-climbing lacks. A four-month open pilot that shows where kernel-verified autoresearch works, and where it breaks, is low-cost evidence for those far larger bets on automated alignment research.</p>
-          </div>
+          <p>Our aim is more modest than that of Elhage et al. but similar in spirit: a growing library of kernel-checked theorems that applied researchers can use as reference points, and a workflow for producing them faster than hand-derivation alone.</p>
         </div>
       </div>
     </div>
@@ -155,18 +139,17 @@
       <h2 class="section-heading reveal">A compositional theory of what transformers can represent.</h2>
 
       <div class="strand reveal">
-        <h3 class="strand-title">Mechanistic interpretability</h3>
+        <h3 class="strand-title">Mech Interp Dojo</h3>
         <div class="strand-body">
-          <p>Mechanistic interpretability is an important component of a broader toolkit for AI safety and oversight, but developing theory for it has been demanding, requiring sustained expert effort to work through the underlying mathematics.</p>
-          <p>Our aim is a growing library of kernel-checked theorems that applied researchers can use as reference points, produced faster than hand-derivation alone. We start from attention heads and work towards composing component level theorems into the expressivity of multilayer transformers.</p>
+          <p>A growing body of machine-verified theorems about a model&rsquo;s internal mechanisms. We start from attention heads and work towards composing component level theorems into the expressivity of multilayer transformers.</p>
         </div>
       </div>
 
       <div class="strand reveal">
         <h3 class="strand-title">Harness design</h3>
         <div class="strand-body">
-          <p>An open source multi agent orchestration harness: a system for coordinating frontier models for conjecture generation, proof search and Lean verification. Candidate results must survive mathematical critique and an adversarial counterexample hunt before any proof work begins.</p>
-          <p>No single frontier model closes the loop alone on this problem, but the right combinations do. We are mapping which orchestration choices unlock mathematical progress, and publishing the harness and ablations, negative results included.</p>
+          <p>An open source multi agent orchestration harness: a system for coordinating frontier models for conjecture generation, proof search and Lean verification.</p>
+          <p>We have found that several frontier models collaborating produce novel theorems that none of them reaches alone. We want to understand which orchestration choices unlock mathematical progress, and to publish the harness together with evaluations across different choices of harness.</p>
         </div>
       </div>
     </div>
@@ -176,7 +159,7 @@
   <section class="section" id="outputs">
     <div class="section-inner">
       <p class="section-label reveal">Open outputs</p>
-      <h2 class="section-heading reveal">The theorem ledger, the harness, and the ablations, negative results included.</h2>
+      <h2 class="section-heading reveal">A mech interp dojo and a harness.</h2>
 
       <ul class="outputs-list reveal">
         <li>
@@ -190,21 +173,21 @@
           </a>
         </li>
         <li>
-          <a class="output" href="https://www.lesswrong.com/posts/T66BKwSufh5SfiPHm/how-many-attention-heads-do-you-need-to-do-xor-3" target="_blank" rel="noopener">
-            <span class="output-kind">Writeup</span>
-            <span class="output-body">
-              <span class="output-title">How many attention heads do you need to do XOR?</span>
-              <span class="output-desc">You need at least two attention heads to do XOR, and we will find that it is a surprisingly crisp result which uses only a few lines of algebra.</span>
-            </span>
-            <span class="output-arrow"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          </a>
-        </li>
-        <li>
           <a class="output" href="https://manifund.org/projects/formally-verified-autoresearch-for-theoretical-mech-interp" target="_blank" rel="noopener">
             <span class="output-kind">Grant</span>
             <span class="output-body">
               <span class="output-title">Formally verified autoresearch for theoretical mechanistic interpretability</span>
               <span class="output-desc">The full project description, deliverables, theory of impact and budget, on Manifund.</span>
+            </span>
+            <span class="output-arrow"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a>
+        </li>
+        <li>
+          <a class="output" href="https://www.lesswrong.com/posts/T66BKwSufh5SfiPHm/how-many-attention-heads-do-you-need-to-do-xor-3" target="_blank" rel="noopener">
+            <span class="output-kind">Preliminary writeup</span>
+            <span class="output-body">
+              <span class="output-title">How many attention heads do you need to do XOR?</span>
+              <span class="output-desc">You need at least two attention heads to do XOR, and we will find that it is a surprisingly crisp result which uses only a few lines of algebra.</span>
             </span>
             <span class="output-arrow"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
           </a>
@@ -249,12 +232,12 @@
     <div class="careers-inner">
       <p class="section-label reveal">We&rsquo;re hiring</p>
       <h2 class="careers-heading reveal">Help us build formally verified autoresearch for mechanistic interpretability.</h2>
-      <p class="careers-body reveal">We are preparing to recruit two researchers for a four-month project (August to November 2026): a research scientist for mechanistic interpretability theory and a research engineer for multi-agent orchestration, who run the autoresearch experiments and the orchestration ablations. Both will have substantial autonomy over their daily work.</p>
+      <p class="careers-body reveal">We are preparing to recruit two researchers for a four-month project (August to November 2026): a research scientist for mechanistic interpretability theory, and a research engineer for harness design who will set up the autoresearch experiments.</p>
 
       <div class="roles-grid">
         <a class="role-card reveal" href="/careers/research-scientist/">
           <h3 class="role-title">Research Scientist</h3>
-          <p class="role-desc">Mechanistic interpretability theory. Read and interpret the outputs from autoresearch runs, identifying promising conjectures, hidden assumptions and useful directions, and turn them into precise research questions and experiments.</p>
+          <p class="role-desc">Mechanistic interpretability theory. Read and interpret the outputs from autoresearch runs, identifying promising conjectures, hidden assumptions and useful directions.</p>
           <span class="card-link">
             Role details
             <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -263,7 +246,7 @@
 
         <a class="role-card reveal" style="transition-delay:0.1s" href="/careers/research-engineer/">
           <h3 class="role-title">Research Engineer</h3>
-          <p class="role-desc">Multi-agent orchestration. Build the framework that coordinates agents to do the math, integrate Lean compilation into the agent loop, and benchmark models, prompts, agent roles and coordination strategies against verified mathematical progress.</p>
+          <p class="role-desc">Harness design. Build the framework that coordinates agents to do the math, integrate Lean compilation into the agent loop, and benchmark harnesses against verified mathematical progress.</p>
           <span class="card-link">
             Role details
             <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
