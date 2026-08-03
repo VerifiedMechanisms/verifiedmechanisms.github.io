@@ -599,10 +599,31 @@ nav.scrolled {
   letter-spacing: -0.015em;
   margin: 0 0 1.5rem;
 }
-.careers-body { color: var(--text-dim); margin: 0 0 3rem; max-width: 64ch; }
+.careers-body { color: var(--text-dim); margin: 0 0 1.1rem; }
+.careers-body--deadline { margin: 0 0 3rem; }
+
+.careers-list { margin: 0 0 1.4rem; padding: 0; list-style: none; }
+.careers-list li {
+  position: relative;
+  padding: 0 0 0 1.5rem;
+  margin-bottom: 0.55rem;
+  color: var(--text-dim);
+  line-height: 1.7;
+}
+.careers-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.72em;
+  width: 6px;
+  height: 6px;
+  border: 1px solid var(--accent);
+  transform: rotate(45deg);
+}
 
 .roles-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
 .role-card {
+  position: relative;
   display: flex;
   flex-direction: column;
   padding: 2rem 1.9rem;
@@ -631,8 +652,27 @@ nav.scrolled {
   font-weight: 500;
   line-height: 1.25;
   margin: 0 0 0.7rem;
+  color: var(--accent);
+  transition: color 0.25s var(--ease);
 }
+.role-card:hover .role-title { color: var(--cyan); }
 .role-desc { font-size: 0.88rem; line-height: 1.75; color: var(--text-dim); margin: 0; }
+
+/* Footer row inside a role card: details link left, apply button right.
+   The card-link's ::after stretches over the card so the whole card stays
+   clickable; the apply button sits above it. */
+.role-foot {
+  margin-top: auto;
+  padding-top: 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.role-foot .card-link { margin-top: 0; }
+.role-card .card-link::after { content: ""; position: absolute; inset: 0; }
+.btn--card { position: relative; z-index: 1; padding: 0.6rem 1.4rem; font-size: 0.72rem; }
 
 .process {
   margin-top: 3rem;
@@ -642,7 +682,6 @@ nav.scrolled {
   color: var(--text-dim);
 }
 .process strong { color: var(--text); font-weight: 600; }
-.careers-cta { margin-top: 2.5rem; }
 
 /* ---------- footer ---------- */
 
