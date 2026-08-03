@@ -495,7 +495,7 @@ nav.scrolled {
 
 /* ---------- outputs ---------- */
 
-.outputs-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--border); }
+.outputs-list { list-style: none; margin: 3.5rem 0 0; padding: 0; border-top: 1px solid var(--border); }
 .output {
   display: flex;
   align-items: baseline;
