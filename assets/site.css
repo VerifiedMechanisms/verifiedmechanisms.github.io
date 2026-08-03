@@ -541,7 +541,6 @@ nav.scrolled {
   line-height: 1.65;
   color: var(--text-dim);
   margin: 0;
-  max-width: 68ch;
 }
 .output-arrow {
   flex: none;
