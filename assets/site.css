@@ -600,6 +600,7 @@ nav.scrolled {
   margin: 0 0 1.5rem;
 }
 .careers-body { color: var(--text-dim); margin: 0 0 1.1rem; }
+.careers-body strong { color: var(--text); font-weight: 600; }
 .careers-body--deadline { margin: 0 0 3rem; }
 
 .careers-list { margin: 0 0 1.4rem; padding: 0; list-style: none; }
