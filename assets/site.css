@@ -552,41 +552,73 @@ nav.scrolled {
 
 /* ---------- team ---------- */
 
-.team-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-top: 3rem; }
-.team-card {
-  padding: 2rem 1.9rem;
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: 2px;
+/* With the portraits gone a centred three-up grid has nothing holding it to an
+   axis, so the roster takes the Research section's row grammar instead: name
+   and role in the left column, bio and links in the right, hairline between. */
+.team-grid { margin-top: 3rem; }
+.team-member {
+  display: grid;
+  grid-template-columns: 14rem 1fr;
+  gap: 3.5rem;
+  align-items: start;
+  padding: 2.25rem 0;
+  border-top: 1px solid var(--border);
 }
+.team-member:last-of-type { border-bottom: 1px solid var(--border); }
+
 .team-name {
   font-family: var(--font-display);
-  font-size: 1.22rem;
-  font-weight: 500;
+  font-size: 1.3rem;
+  font-weight: 400;
   line-height: 1.25;
-  margin: 0 0 0.3rem;
+  letter-spacing: -0.01em;
+  margin: 0 0 0.5rem;
 }
+.team-name a { color: var(--text); transition: color 0.25s var(--ease); }
+.team-name a:hover { color: var(--accent); }
 .team-role {
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 0.13em;
   text-transform: uppercase;
   color: var(--eyebrow);
-  margin: 0 0 1rem;
+  margin: 0;
 }
-.team-bio { font-size: 0.88rem; line-height: 1.75; color: var(--text-dim); margin: 0; }
-.team-links { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.25rem; }
-.team-links a {
-  border: 1px solid var(--border);
-  border-radius: 2px;
-  padding: 0.4rem 0.85rem;
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+.team-bio {
+  max-width: 62ch;
+  font-size: 0.9rem;
+  line-height: 1.8;
   color: var(--text-dim);
+  text-wrap: pretty;
+  margin: 0;
 }
-.team-links a:hover { color: var(--bg); background: var(--accent); border-color: var(--accent); }
+
+/* Same set as karthikviswanathn.github.io (Font Awesome brands + Academicons),
+   drawn inline rather than pulling in two icon fonts for six glyphs. */
+.team-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 0.9rem;
+}
+.team-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  color: var(--text-mute);
+  transition: color 0.25s var(--ease), transform 0.25s var(--ease);
+}
+.team-links a:hover { color: var(--accent); transform: translateY(-2px); }
+.team-links svg { width: 18px; height: 18px; display: block; fill: currentColor; }
+.team-links svg.icon-stroke {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
 
 /* ---------- careers ---------- */
 
@@ -692,12 +724,13 @@ footer {
   background: var(--bg-2);
 }
 .footer-inner { max-width: var(--maxw); margin: 0 auto; }
+/* Two columns, two rows: brand beside the links, and the two blurbs on a
+   shared row so they sit on the same line however tall the row above is. */
 .footer-top {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2.5rem;
-  justify-content: space-between;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.9rem 2.5rem;
+  align-items: start;
   padding-bottom: 2.5rem;
   border-bottom: 1px solid var(--border);
 }
@@ -708,11 +741,11 @@ footer {
   font-family: var(--font-display);
   font-size: 1.25rem;
   color: var(--text);
-  margin-bottom: 0.9rem;
 }
 .footer-brand .brand-mark { width: 34px; height: 34px; }
 .footer-blurb { font-size: 0.85rem; line-height: 1.7; color: var(--text-dim); margin: 0; max-width: 42ch; }
-.footer-links { display: flex; flex-wrap: wrap; gap: 1.75rem; list-style: none; margin: 0; padding: 0; }
+.footer-blurb--right { text-align: right; margin-left: auto; }
+.footer-links { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 1.75rem; list-style: none; margin: 0; padding: 0; }
 .footer-links a { color: var(--text-dim); font-size: 0.8rem; font-weight: 500; letter-spacing: 0.06em; }
 .footer-links a:hover { color: var(--accent); }
 .footer-bottom {
@@ -843,7 +876,8 @@ footer {
   .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
   .approach-grid { grid-template-columns: 1fr; gap: 2.25rem; }
   .strand { grid-template-columns: 1fr; gap: 1.5rem; padding: 2.5rem 0; }
-  .team-grid, .roles-grid { grid-template-columns: 1fr; }
+  .team-member { grid-template-columns: 1fr; gap: 1.1rem; padding: 2rem 0; }
+  .roles-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 768px) {
@@ -877,6 +911,11 @@ footer {
   .output { flex-wrap: wrap; gap: 0.4rem 1rem; }
   .output-kind { width: 100%; }
   .meta-row { gap: 1.75rem; }
+
+  /* one column: the right-hand blurb has nothing to sit beside */
+  .footer-top { grid-template-columns: 1fr; gap: 1.4rem; }
+  .footer-links { justify-content: flex-start; }
+  .footer-blurb--right { text-align: left; margin-left: 0; }
 }
 
 @media (max-width: 480px) {
