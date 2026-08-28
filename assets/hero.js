@@ -46,9 +46,10 @@
     canvas.height = Math.round(h * dpr);
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
+    // Tuned for the hero figure column rather than a full-bleed backdrop.
     var area = w * h;
-    var count = Math.max(28, Math.min(78, Math.round(area / 15000)));
-    linkDist = Math.max(120, Math.min(210, Math.sqrt(area) / 4.4));
+    var count = Math.max(34, Math.min(78, Math.round(area / 9000)));
+    linkDist = Math.max(110, Math.min(210, Math.sqrt(area) / 4.4));
 
     nodes = [];
     for (var i = 0; i < count; i++) {
