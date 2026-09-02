@@ -281,7 +281,7 @@ nav.scrolled {
    figure right, on a flat ground. */
 .hero {
   position: relative;
-  padding: 8rem var(--gutter) 3rem;
+  padding: 10rem var(--gutter) 4.5rem;
 }
 .hero-inner {
   max-width: var(--maxw);
@@ -858,7 +858,7 @@ footer {
 @media (max-width: 768px) {
   :root { --gutter: 1.5rem; }
   .section { padding: 3.5rem var(--gutter); }
-  .hero { padding: 6.5rem var(--gutter) 3rem; }
+  .hero { padding: 7rem var(--gutter) 3.5rem; }
   .page-header { padding: 7rem var(--gutter) 2.5rem; }
   .brand-mark { width: 34px; height: 34px; }
   .nav-logo { font-size: 1.12rem; }
