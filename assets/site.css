@@ -338,8 +338,6 @@ nav.scrolled {
   margin: 0;
 }
 
-.hero-actions { display: flex; flex-wrap: wrap; gap: 0.9rem; margin-top: 2.4rem; }
-
 .hero-figure { position: relative; margin: 0; min-width: 0; }
 .hero-canvas { display: block; width: 100%; aspect-ratio: 1 / 1.04; }
 
