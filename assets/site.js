@@ -1,4 +1,4 @@
-/* Nav behaviour, theme toggle, scroll reveal. */
+/* Nav behaviour, theme toggle, team cards, scroll reveal. */
 (function () {
   'use strict';
 
@@ -64,6 +64,34 @@
         toggle.setAttribute('aria-expanded', 'false');
       }
     });
+  }
+
+  /* ---------- team cards ---------- */
+
+  // On /team/ each card's header is a button that opens the bio beneath it.
+  var people = document.querySelectorAll('.person');
+  if (people.length) {
+    var setOpen = function (card, open) {
+      card.classList.toggle('is-open', open);
+      var btn = card.querySelector('.person-toggle');
+      if (btn) btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    };
+    Array.prototype.forEach.call(people, function (card) {
+      var btn = card.querySelector('.person-toggle');
+      if (!btn) return;
+      btn.addEventListener('click', function () {
+        setOpen(card, !card.classList.contains('is-open'));
+      });
+    });
+    // /team/#ben-meiring opens that card on arrival.
+    var openFromHash = function () {
+      var id = location.hash.replace(/^#/, '');
+      if (!id) return;
+      var card = document.getElementById(id);
+      if (card && card.classList.contains('person')) setOpen(card, true);
+    };
+    openFromHash();
+    window.addEventListener('hashchange', openFromHash);
   }
 
   /* ---------- reveal ---------- */

@@ -7,9 +7,10 @@ served by GitHub Pages from `main` at the repository root.
 
 | Path | What |
 | --- | --- |
-| `index.html` | The one-pager: hero, about, research, open outputs, team, careers |
+| `index.html` | The one-pager: hero, about, research, open outputs, team teaser, careers |
 | `careers/research-scientist/` | Research Scientist role page |
 | `careers/research-engineer/` | Research Engineer role page |
+| `team/` | The full roster in four groups; each card opens on click to show the bio and links |
 | `assets/site.css` | Shared stylesheet for all three pages |
 | `assets/site.js` | Nav behaviour, theme toggle, scroll reveal |
 | `assets/hero.js` | Hero node-graph canvas (index only) |
@@ -33,7 +34,9 @@ Site copy is drawn from the project's existing public material rather than writt
 the [Manifund project page](https://manifund.org/projects/formally-verified-autoresearch-for-theoretical-mech-interp),
 the [xorformer](https://github.com/VerifiedMechanisms/xorformer) README and `formalization/` docs,
 the SPAR project proposal, and the LessWrong post. When editing, keep it that way and do not
-introduce technical claims that no source supports.
+introduce technical claims that no source supports. Team bios on `team/` come from each member's
+own Slack introduction and application form, and the role lines are the one-liners from the team
+announcement; keep new bios to what the person has said about themselves.
 
 Two things to watch if detailed results are ever added back:
 
