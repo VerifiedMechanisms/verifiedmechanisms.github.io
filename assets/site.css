@@ -943,6 +943,225 @@ footer {
 
 .apply { margin-top: 3.25rem; padding-top: 2.5rem; border-top: 1px solid var(--border); }
 
+/* ---------- blog posts ---------- */
+
+/* Long-form articles, ported from the dev site so the two read as one
+   family: the page-title serif for h1, diamond bullets, hanging numerals,
+   violet-rule blockquotes, collapsible asides and white-mounted figures. */
+.post-page { padding: 9rem var(--gutter) 5rem; }
+.post-page .back-link { margin-bottom: 2.5rem; }
+
+code {
+  font-family: var(--font-mono);
+  font-size: 0.86em;
+  color: var(--cyan);
+  background: var(--code-bg);
+  padding: 0.1em 0.35em;
+  border-radius: 2px;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+.entry h1 {
+  font-family: var(--font-display);
+  font-size: clamp(1.9rem, 3.6vw, 2.7rem);
+  font-weight: 300;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  margin: 0 0 1.25rem;
+  text-wrap: balance;
+}
+/* A 300-weight serif reads grey as dark-on-cream. */
+:root[data-theme="light"] .entry h1 { font-weight: 400; }
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]) .entry h1 { font-weight: 400; }
+}
+
+.entry-meta {
+  margin: 0 0 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.95rem;
+  color: var(--text-mute);
+}
+.entry-meta a { color: var(--text-mute); border-bottom: 1px solid var(--border-lit); }
+.entry-meta a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+.entry-meta .sep { margin: 0 0.5rem; }
+
+.entry--post p, .entry--post li { color: var(--text-dim); }
+.entry--post p { margin: 0 0 1.1rem; }
+.entry--post .lede { font-size: 1.08rem; line-height: 1.7; color: var(--text); margin-bottom: 1.6rem; }
+.entry--post strong { color: var(--text); font-weight: 600; }
+.entry--post li { margin-bottom: 0.8rem; line-height: 1.7; }
+.entry--post li > p { margin-bottom: 0.4rem; }
+/* anchor targets (footnotes and back-references) land below the fixed nav */
+.entry--post :target { scroll-margin-top: 7rem; }
+
+.entry--post h2 {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  margin: 3.25rem 0 1.1rem;
+}
+.entry--post h3 {
+  margin: 2.25rem 0 0.85rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--eyebrow);
+}
+
+/* Diamond bullets, as on the role pages. */
+.entry--post ul { list-style: none; margin: 0 0 1.1rem; padding: 0; }
+.entry--post ul > li { position: relative; padding-left: 1.5rem; }
+.entry--post ul > li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.72em;
+  width: 6px;
+  height: 6px;
+  border: 1px solid var(--accent);
+  transform: rotate(45deg);
+}
+
+/* Numbered lists: hanging numerals in the accent, tabular so they align. */
+.entry--post ol:not(.footnotes ol) {
+  list-style: none;
+  counter-reset: step;
+  margin: 0 0 1.1rem;
+  padding: 0;
+}
+.entry--post ol:not(.footnotes ol) > li {
+  position: relative;
+  counter-increment: step;
+  padding-left: 2rem;
+}
+.entry--post ol:not(.footnotes ol) > li::before {
+  content: counter(step, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  top: 0.12em;
+  font-size: 0.78em;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  font-variant-numeric: tabular-nums;
+  color: var(--accent);
+}
+
+/* KaTeX's default 1.21em runs large beside Inter. */
+.entry--post .katex { font-size: 1.1em; }
+
+/* Display equations live in their own paragraph; let long ones scroll
+   sideways rather than break the column on small screens. */
+.entry--post .eq {
+  margin: 1.4rem 0;
+  padding-bottom: 0.35rem;
+  overflow-x: auto;
+}
+.entry--post .eq .katex-display { margin: 0.25rem 0; }
+
+/* the .callout of the role pages */
+.entry--post blockquote {
+  margin: 2rem 0;
+  padding: 1.4rem 1.6rem;
+  background: var(--note-bg);
+  border-left: 2px solid var(--violet);
+  border-radius: 0 2px 2px 0;
+}
+.entry--post blockquote p { margin: 0; color: var(--text); }
+
+/* Post figures are opaque white PNGs; sit them on their own white panel so
+   they read as figures mounted on the page, in both themes. */
+.entry--post .figure { margin: 2.5rem 0; }
+.entry--post .figure--reduced { width: 75%; margin-inline: auto; }
+.figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: #FFFFFF;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  padding: 0.75rem;
+}
+.figure figcaption {
+  margin-top: 0.85rem;
+  font-size: 0.85rem;
+  line-height: 1.65;
+  color: var(--text-mute);
+}
+.figure figcaption strong { color: var(--text-dim); }
+
+/* Collapsible asides, framed like the role cards. */
+.collapse {
+  margin: 2rem 0;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  transition: border-color 0.3s var(--ease);
+}
+.collapse:hover, .collapse[open] { border-color: var(--border-lit); }
+.collapse summary {
+  position: relative;
+  padding: 1rem 1.4rem 1rem 3rem;
+  cursor: pointer;
+  list-style: none;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--text);
+  transition: color 0.25s var(--ease);
+}
+.collapse summary::-webkit-details-marker { display: none; }
+/* a plus that turns to a cross, drawn from two bars */
+.collapse summary::before, .collapse summary::after {
+  content: '';
+  position: absolute;
+  left: 1.4rem;
+  top: 50%;
+  width: 11px;
+  height: 1.5px;
+  margin-top: -0.75px;
+  background: var(--accent);
+  transition: transform 0.3s var(--ease);
+}
+.collapse summary::after { transform: rotate(90deg); }
+.collapse[open] summary::before { transform: rotate(45deg); }
+.collapse[open] summary::after { transform: rotate(135deg); }
+.collapse summary:hover { color: var(--accent); }
+.collapse[open] summary { border-bottom: 1px solid var(--border); }
+.collapse-body { padding: 1.2rem 1.6rem 0.4rem; }
+
+.fnref { line-height: 0; }
+.fnref a { font-size: 0.72em; }
+.footnotes {
+  margin-top: 3.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+}
+.footnotes-label {
+  margin: 0 0 1rem;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+}
+.footnotes ol { margin: 0; padding-left: 1.2rem; }
+.entry--post .footnotes li { font-size: 0.85rem; color: var(--text-mute); margin: 0 0 0.6rem; }
+.entry--post .footnotes li p { font-size: 0.85rem; color: var(--text-mute); margin: 0 0 0.3rem; }
+.entry--post .footnotes li::marker { color: var(--text-mute); }
+.footnotes .fnback { margin-left: 0.4rem; }
+
+@media (max-width: 640px) {
+  .entry--post .figure--reduced { width: 100%; }
+}
+
 /* ---------- reveal ---------- */
 
 .reveal {
@@ -973,6 +1192,7 @@ footer {
   .section { padding: 3.5rem var(--gutter); }
   .hero { padding: 7rem var(--gutter) 3.5rem; }
   .page-header { padding: 7rem var(--gutter) 2.5rem; }
+  .post-page { padding: 7rem var(--gutter) 3.5rem; }
   .brand-mark { width: 34px; height: 34px; }
   .nav-logo { font-size: 1.12rem; }
 
